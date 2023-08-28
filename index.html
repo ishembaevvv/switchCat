@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        button {
+            width: 200px;
+            height: 40px;
+            background: transparent;
+            border-radius: 10px;
+            border: 2px solid black;
+            color: black;
+        }
+        button:hover {
+            border-color: darkturquoise;
+            color: darkturquoise;
+            transform: scale(1.1);
+            transition: all .3s ease;
+        }
+        img {
+            border: 6px inset green;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">
+        <button onclick="hiddenCat()">hiddenCat</button>
+        <button onclick="switchCat()">switchCat</button>
+    </div>
+    <br>
+    <img id="cat" width="400px" src="https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg" alt="">
+    <script>
+        let image = document.getElementById('cat');
+
+        const hiddenCat = () => {
+            image.hidden ?
+            image.hidden = false :
+            image.hidden = true;
+        }
+
+        const switchCat = () => {
+            let link1 = "https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg";
+            let link2 = "https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80";
+
+            image.src === link1 ? 
+            image.src = link2 :
+            image.src = link1
+        }
+    </script>
+</body>
+</html>
